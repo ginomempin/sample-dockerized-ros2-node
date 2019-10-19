@@ -1,0 +1,17 @@
+
+.git
+.gitignore
+.gitkeep
+
+.env
+.vscode
+
+Dockerfile*
+docker-compose*
+.dockerignore
+
+*.md
+
+build
+install
+log
