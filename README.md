@@ -1,7 +1,6 @@
 # Data Management
 
 * [Design/Architecture](#designarchitecture)
-    * [System Architecture](#system-architecture)
     * [ROS Node+App Architecture](#ros-node-app-architecture)
     * [Dependencies](#dependencies)
 * [Building the Apps/Services](#building-the-appsservices)
@@ -16,10 +15,6 @@
 * [References](#references)
 
 ## Design/Architecture
-
-### System Architecture
-
-TBD
 
 ### ROS Node + App Architecture
 
@@ -249,12 +244,12 @@ Note that we reuse the *.dockerfile* to rebuild the image. It is possible just u
 
 ## References
 
-* Migration from ROS1 to ROS2
+* [ROS 2 Overview](https://index.ros.org/doc/ros2/)
+    * [ROS 2 Concepts](https://index.ros.org/doc/ros2/Concepts/)
     * [Migration guide from ROS 1](https://index.ros.org/doc/ros2/Contributing/Migration-Guide/)
     * [Python Migration guide from ROS 1](https://index.ros.org/doc/ros2/Contributing/Migration-Guide-Python/)
 * Samples/Tutorials
     * [demo_nodes_py](https://github.com/ros2/demos/tree/master/demo_nodes_py)
-    * [ROS 2 Tutorials](http://docs.erlerobotics.com/robot_operating_system/ros2/tutorials)
-* API
-    * [ROS Interfaces](https://index.ros.org/doc/ros2/Concepts/About-ROS-Interfaces/)
+    * [turtlebot2](https://github.com/ros2/turtlebot2_demo)
+* Libraries
     * [rclpy](https://github.com/ros2/rclpy/tree/master/rclpy/rclpy)
