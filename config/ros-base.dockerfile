@@ -37,6 +37,7 @@ RUN apt-get update && \
     apt-get install -y python3.7 python3.7-dev && \
     apt-get install -y --reinstall locales && \
     apt-get install -y less tree && \
+    apt-get install -y vim && \
     apt-get install -y usbutils && \
     python3.7 -m pip install pip --upgrade && \
     python3.7 -m pip install wheel && \

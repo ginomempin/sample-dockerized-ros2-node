@@ -163,7 +163,7 @@ $ docker run \
     /bin/bash
 
 # --- inside the myapp container ---
-$ vi myapp/myapp/app.py
+$ vim myapp/myapp/app.py
 $ colcon build
 $ myapp_node &
 $ myapp_tester &
@@ -187,11 +187,11 @@ A better option is to create a container from the Docker image with a [mounted d
 $ docker run \
     -it \
     --name myapp \
-    -v /path/to/repo/src/ros-base:/ws/ros-base \
+    -v /host/path/to/repo/src/ros-base:/ws/ros-base \
     192.168.1.65:5006/ros-base:0.0.2
 
 # --- inside the myapp container ---
-$ vi myapp/myapp/app.py
+$ vim myapp/myapp/app.py
 $ colcon build
 $ myapp_node &
 $ myapp_tester &
@@ -211,7 +211,7 @@ Note that we reuse the *.dockerfile* to rebuild the image. It is possible just u
 
 * When [mounting](https://docs.docker.com/storage/bind-mounts/) the codes from the host machine into the Docker container, you can use VS Code's [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) and [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extensions to connect to the Docker container and edit the codes directly from the IDE.
     1. Install the extensions
-    1. From the *Docker* panel, run a container from the app image
+    1. From the *Docker* panel, create a container from the node+app image
     1. From the *Remote Explorer* panel, find your running container and connect to it
 
         ![vscode - remote extension](./docs/Tools-VSCode-RemoteExtension.png "VSCode Remote Extension")
