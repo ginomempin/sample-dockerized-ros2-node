@@ -10,7 +10,7 @@
 #   "RepoTags": [
 #       "localhost:5006/ros2:nightly"
 #   "Created": "2019-10-18T00:36:34.582204186Z",
-FROM 192.168.1.65:5006/ros2:nightly
+FROM osrf/ros2:nightly
 
 # ------------------------------------------------------------------------------
 # Setup the image's identity

@@ -3,14 +3,14 @@ version: '3'
 services:
   myapp:
     container_name: myapp
-    image: "192.168.1.65:5006/ros-base:latest"
+    image: "ros-base:latest"
     entrypoint: /bin/bash -c "/run-node.sh myapp_node"
     privileged: true
     stdin_open: false
     tty: true
   myapp_tester:
     container_name: myapp_tester
-    image: "192.168.1.65:5006/ros-base:latest"
+    image: "ros-base:latest"
     entrypoint: /bin/bash -c "/run-node.sh myapp_tester"
     privileged: true
     stdin_open: false
