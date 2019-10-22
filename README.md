@@ -34,7 +34,7 @@ The Docker aspect facilitates deployment as the host machine *ideally* only need
     * Docker 19.x
     * docker-compose 1.24.x
 * ROS Docker Image
-    * [osrf/ros2:nightly](https://hub.docker.com/layers/osrf/ros2/nightly/images/sha256-6776bc1367b7248a709cf3d13559cc33ee2b693415382dee1f89429e141a2aa7)
+    * [osrf/ros2:nightly](https://hub.docker.com/r/osrf/ros2/tags?page=1&name=nightly)  (sha256: *6776bc1367b7248a709cf3d13559cc33ee2b693415382dee1f89429e141a2aa7*)
     * [ROS 2 Eloquent](https://index.ros.org/doc/ros2/Releases/Release-Eloquent-Elusor/)
     * Python 3.7.3
     * CMake 3.10.x
