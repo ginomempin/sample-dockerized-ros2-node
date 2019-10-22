@@ -1,4 +1,12 @@
-# Data Management
+# Sample Dockerized ROS2 Node + Python App
+
+The setup wraps a simple Python app in a ROS2 node and then builds it into a Docker image. The host PC/machine only has to setup Docker to run the node+app's inside Docker containers which can then "talk" to each other as long as they are on the same network.
+
+The sample [*ros-base*](./test/ros-base.yml) config creates 2 containers, *myapp* and *myapp-tester*, each of which is a ROS2 node. The *myapp-tester* sends one-way commands and requests to the *myapp* node, which can also reply with a message of its own. The APIs of the *myapp* node is exposed to the *myapp-tester* using a *myapp_apis* package. The sample node+app can be configured to fit different use-cases and applications, and can scale up to many more nodes.
+
+The ROS aspect provides a standard messaging format and interface for different apps. It isolates the app development with the communication between multiple apps and resources, i.e. the app developer/s does not need to care how their app can talk with other apps because that would be the responsibility of the node developer/s.
+
+The Docker aspect facilitates deployment as the host machine *ideally* only needs to install Docker and `docker-compose` to run the setup. All the node + app setup and dependencies are contained within the image, and all the Docker containers can be run on a local server or hosted on cloud platforms.
 
 * [Design/Architecture](#designarchitecture)
     * [ROS Node+App Architecture](#ros-node-app-architecture)
