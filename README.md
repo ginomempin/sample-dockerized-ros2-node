@@ -4,9 +4,9 @@ The setup wraps a simple Python app in a ROS2 node and then builds it into a Doc
 
 The sample [*ros-base*](./test/ros-base.yml) config creates 2 containers, *myapp* and *myapp-tester*, each of which is a ROS2 node. The *myapp-tester* sends one-way commands and calls services to the *myapp* node, which can also reply with messages of its own. The APIs of the *myapp* node is exposed to the *myapp-tester* using a *myapp_apis* package. The sample node+app can be configured to fit different use-cases and applications, and can scale up to communicate with many more nodes.
 
-The ROS aspect provides a standard messaging format and interface for different apps. It isolates the app development with the communication between multiple apps and resources, i.e. the app developer/s does not need to care how their app can talk with other apps because that would be the responsibility of the node developer/s.
+The ROS aspect provides a standard messaging format and interface for different apps. It isolates the app development with the communication and coordination between other apps and resources. The app developer does not need to care about how their app will talk with other apps because that would be the responsibility of the node developer.
 
-The Docker aspect facilitates deployment as the host machine *ideally* only needs to install Docker and `docker-compose` to run the setup. All the node + app setup and dependencies are contained within the image, and all the Docker containers can be run on a local server or hosted on cloud platforms.
+The Docker aspect facilitates deployment as the host machine *ideally* only needs to install Docker and `docker-compose` to run the nodes. All the node + app setup steps and dependencies are contained in the building of the image and in the running of the containers. The containers can also be run on a local server, on a remote machine (for CI/CD pipelines), or hosted on cloud platforms.
 
 * [Design/Architecture](#designarchitecture)
     * [ROS Node+App Architecture](#ros-node-app-architecture)
