@@ -1,8 +1,8 @@
 # Sample Dockerized ROS2 Node + Python App
 
-The setup wraps a simple Python app in a ROS2 node and then builds it into a Docker image. The host PC/machine only has to setup Docker to run the node+app's inside Docker containers which can then "talk" to each other as long as they are on the same network.
+The setup wraps a simple Python app in a ROS2 node and then builds it into a Docker image. Each image can then be run inside their own Docker containers which can then "talk" to each other as long as they are on the same network.
 
-The sample [*ros-base*](./test/ros-base.yml) config creates 2 containers, *myapp* and *myapp-tester*, each of which is a ROS2 node. The *myapp-tester* sends one-way commands and requests to the *myapp* node, which can also reply with a message of its own. The APIs of the *myapp* node is exposed to the *myapp-tester* using a *myapp_apis* package. The sample node+app can be configured to fit different use-cases and applications, and can scale up to many more nodes.
+The sample [*ros-base*](./test/ros-base.yml) config creates 2 containers, *myapp* and *myapp-tester*, each of which is a ROS2 node. The *myapp-tester* sends one-way commands and calls services to the *myapp* node, which can also reply with messages of its own. The APIs of the *myapp* node is exposed to the *myapp-tester* using a *myapp_apis* package. The sample node+app can be configured to fit different use-cases and applications, and can scale up to communicate with many more nodes.
 
 The ROS aspect provides a standard messaging format and interface for different apps. It isolates the app development with the communication between multiple apps and resources, i.e. the app developer/s does not need to care how their app can talk with other apps because that would be the responsibility of the node developer/s.
 
@@ -26,7 +26,7 @@ The Docker aspect facilitates deployment as the host machine *ideally* only need
 
 ### ROS Node + App Architecture
 
-![service architecture](./docs/SystemDiagrams_Node.png "Service Architecture")
+![ros-node-app-architecture](./docs/ros-node-app-architecture.png "")
 
 ### Dependencies
 
@@ -248,7 +248,8 @@ Note that we reuse the *.dockerfile* to rebuild the image. It is possible just u
 * Tools
     * Add VS Code workspace settings
 * Docs
-    * Change to PlantUML
+    * ROS topics and services
+    * API (auto-generated, ex. Sphinx for Python)
 
 ## References
 

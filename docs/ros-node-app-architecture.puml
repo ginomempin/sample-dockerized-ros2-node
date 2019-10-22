@@ -1,0 +1,77 @@
+@startuml ros-node-app-architecture
+
+skinparam Node {
+    BackgroundColor     LightGray
+    BorderColor         Maroon
+}
+
+skinparam Package {
+    BackgroundColor     AliceBlue
+}
+
+skinparam Component {
+    FontColor           Black
+    FontSize            17
+    AttributeFontColor  black
+    AttributeFontSize   15
+    AttributeFontname   Droid Sans Mono
+    BackgroundColor     SkyBlue
+    BorderColor         Black
+    ArrowColor          #222266
+    Padding             20px
+}
+
+node "Docker Container" {
+    package "App Node" {
+        component [ROS\nNode] as NODE
+        component [App] as APP
+        component [resources] as RESX
+
+        [APP] <-down-> [NODE]
+        [APP] <-left-> [RESX]
+    }
+    package "Env" {
+        [dependencies]
+    }
+}
+
+interface "client" as CLIENT
+[APP] <-right-> CLIENT : access
+
+node "other container 1" {
+    component [other node] as NODE_1
+    interface "msg" as msg_1
+    interface "srv" as srv_1
+
+    [NODE] -> msg_1 : publish
+    msg_1 -down-> [NODE_1]
+
+    [NODE] <..> srv_1 : call
+    srv_1 <..> [NODE_1]
+}
+
+node "other container 2" {
+    component [other node] as NODE_2
+    interface "msg" as msg_2
+    interface "srv" as srv_2
+
+    [NODE] -> msg_2 : publish
+    msg_2 -down-> [NODE_2]
+
+    [NODE] <..> srv_2 : call
+    srv_2 <..> [NODE_2]
+}
+
+node "other container N" {
+    component [other node] as NODE_N
+    interface "msg" as msg_n
+    interface "srv" as srv_n
+
+    [NODE] -> msg_n : publish
+    msg_n -down-> [NODE_N]
+
+    [NODE] <..> srv_n : call
+    srv_n <..> [NODE_N]
+}
+
+@enduml
