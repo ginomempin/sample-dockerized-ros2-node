@@ -18,9 +18,9 @@ FROM osrf/ros2:nightly
 # TODO
 #  - Make the name consistent with the service name
 #  - Replace the hardcoded version with a version.txt
-LABEL NAME="service" \
+LABEL NAME="ros-base" \
       VERSION="0.0.1" \
-      DESC="MyApp"
+      DESC="ROS2 Node + Python App"
 
 # ------------------------------------------------------------------------------
 # Setup all the environment dependencies
