@@ -1,18 +1,14 @@
 from setuptools import find_packages
 from setuptools import setup
 
-target_packages = list()
-target_packages.extend(find_packages(where='src'))
+package_name = "myapp_tester"
 
 setup(
-    name='myapp_tester',
+    name=package_name,
     version='0.0.0',
-    packages=target_packages,
+    packages=[package_name],
     data_files=[
-        ('share/myapp_tester', ['package.xml']),
-    ],
-    py_modules=[
-        'myapp_tester.test_node',
+        ('share/' + package_name, ['package.xml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

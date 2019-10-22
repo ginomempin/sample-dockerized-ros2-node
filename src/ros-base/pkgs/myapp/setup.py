@@ -1,19 +1,14 @@
 from setuptools import find_packages
 from setuptools import setup
 
-target_packages = list()
-target_packages.extend(find_packages(where='src'))
+package_name = "myapp"
 
 setup(
-    name='myapp',
+    name=package_name,
     version='0.0.0',
-    packages=target_packages,
+    packages=[package_name],
     data_files=[
-        ('share/myapp', ['package.xml']),
-    ],
-    py_modules=[
-        'myapp.app_node',
-        'myapp.app',
+        ('share/' + package_name, ['package.xml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
