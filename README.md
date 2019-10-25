@@ -253,6 +253,8 @@ Note that we reuse the *.dockerfile* to rebuild the image. It is possible just u
 
 ## References
 
+* What is ROS?
+    * [The Robotics Back-End: What is ROS?](https://roboticsbackend.com/what-is-ros/)
 * [ROS 2 Overview](https://index.ros.org/doc/ros2/)
     * [ROS 2 Concepts](https://index.ros.org/doc/ros2/Concepts/)
     * [Migration guide from ROS 1](https://index.ros.org/doc/ros2/Contributing/Migration-Guide/)
